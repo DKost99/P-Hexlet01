@@ -1,0 +1,257 @@
+/* =========================================================
+   Портфолио — стили воркшопа «Реанимация div-супа»
+
+   ВНИМАНИЕ, УЧАСТНИК ВОРКШОПА!
+   Этот файл менять НЕЛЬЗЯ. Ни одной строчки.
+
+   Все стили держатся на классах, а не на тегах.
+   Это значит: вы можете свободно менять теги в index.html —
+   если сохраните класс, внешний вид не изменится.
+   Если после вашей правки вёрстка поехала — вы потеряли класс.
+   ========================================================= */
+
+/* ===== Переменные ===== */
+:root {
+  --accent: #2f6fed;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #e3e6ec;
+  --bg: #f6f7f9;
+  --radius: 10px;
+}
+
+/* ===== Базовый сброс ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 24px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== Каркас страницы ===== */
+.site-header,
+.site-nav,
+.site-main,
+.site-footer {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-header {
+  padding: 32px 0 12px;
+}
+
+.page-title {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  gap: 20px;
+  padding: 12px 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.site-main {
+  padding: 24px 0;
+}
+
+.site-footer {
+  padding: 20px 0 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ===== Карточка (обёртка для стилизации) ===== */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* ===== Заголовки =====
+   font-size / font-weight / margin заданы явно,
+   чтобы замена div на h1/h2/h3 ничего не сдвинула. */
+.section-title {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.sub-title {
+  margin: 20px 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ===== Текст ===== */
+.text {
+  margin: 0 0 12px;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.text-small {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.accent {
+  font-weight: 700;
+}
+
+/* ===== Изображения ===== */
+.avatar {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 24px;
+  margin: 4px 0 20px;
+}
+
+.shot {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.caption {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ===== Навыки =====
+   list-style / margin / padding обнулены заранее,
+   чтобы div -> ul и div -> li прошли незаметно. */
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.9;
+}
+
+.skill::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ===== Этапы работы =====
+   list-style-position: inside + нулевой padding —
+   чтобы p -> ol не сдвинул нумерацию. */
+.steps {
+  margin: 0;
+  padding: 0;
+  line-height: 1.9;
+  list-style-position: inside;
+}
+
+/* ===== Кнопка =====
+   font: inherit и border: none обязательны:
+   без них button принесёт свой системный шрифт и рамку. */
+.btn {
+  display: inline-block;
+  font: inherit;
+  text-align: center;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.btn:hover {
+  background: #2559c4;
+}
+
+/* ===== Таблица ===== */
+.table-title {
+  padding: 0 0 8px;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.price {
+  width: 100%;
+}
+
+.price td,
+.price th {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-weight: 400;
+}
+
+/* Специфичность выше, чем у .price td — переживает замену td на th */
+.price .th {
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
